@@ -4,6 +4,9 @@ new Vue({
         skills:[]
     },
     mounted() {
-        axios.get('/skills').then(response => this.skills = response.data);
+        axios.get('/skills')
+        .then(response => this.skills = response.data)
+        .catch(error => console.log(error))
+        .then(()=> console.log("Run..."));
     },
 });
